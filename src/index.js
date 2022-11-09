@@ -1,17 +1,54 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import './style.css'
+import Layout from './routes/Layout.js'
+import Users, { loader as usersLoader } from './routes/Users.js'
+import User, { loader as userLoader } from './routes/User.js'
+import Albums, { loader as albumsLoader } from './routes/Albums.js'
+import UserAlbum, { loader as userAlbumsloader } from './routes/UserAlbum.js'
+import Error from './routes/Error.js'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Layout />,
+    children: [
+      {
+        path: '/',
+        element: <Users />,
+        loader: usersLoader,
+      },
+      {
+        path: '/:id',
+        element: <User />,
+        loader: userLoader,
+        errorElement: <Error />
+      },
+      {
+        path: '/albums',
+        element: <Albums />,
+        loader: albumsLoader,
+      },
+      {
+        path: '/albums/:id',
+        element: <UserAlbum />,
+        loader: userAlbumsloader,
+        errorElement: <Error />
+      },
+      {
+        path: '*',
+        element: <Error />,
+      }
+    ]
+  }
+])
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+function App () {
+  return <RouterProvider router={router} />
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"))
+root.render(<App />)
+
+export default App
