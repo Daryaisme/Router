@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.1ccd700f.css",
-    "main.js": "/static/js/main.88674c1f.js",
-    "static/media/ofont.ru_Romul.ttf": "/static/media/ofont.ru_Romul.2dd421689fcb9a1f9cd7.ttf",
-    "index.html": "/index.html",
-    "main.1ccd700f.css.map": "/static/css/main.1ccd700f.css.map",
-    "main.88674c1f.js.map": "/static/js/main.88674c1f.js.map"
+    "main.css": "/Router/static/css/main.5876112d.css",
+    "main.js": "/Router/static/js/main.88674c1f.js",
+    "static/media/ofont.ru_Romul.ttf": "/Router/static/media/ofont.ru_Romul.2dd421689fcb9a1f9cd7.ttf",
+    "index.html": "/Router/index.html",
+    "main.5876112d.css.map": "/Router/static/css/main.5876112d.css.map",
+    "main.88674c1f.js.map": "/Router/static/js/main.88674c1f.js.map"
   },
   "entrypoints": [
-    "static/css/main.1ccd700f.css",
+    "static/css/main.5876112d.css",
     "static/js/main.88674c1f.js"
   ]
 }
