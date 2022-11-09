@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createHashRouter, RouterProvider } from 'react-router-dom'
 import './style.css'
 import Layout from './routes/Layout.js'
 import Users, { loader as usersLoader } from './routes/Users.js'
@@ -9,7 +9,7 @@ import Albums, { loader as albumsLoader } from './routes/Albums.js'
 import UserAlbum, { loader as userAlbumsloader } from './routes/UserAlbum.js'
 import Error from './routes/Error.js'
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: '/',
     element: <Layout />,
